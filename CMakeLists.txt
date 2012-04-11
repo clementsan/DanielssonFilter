@@ -1,0 +1,11 @@
+PROJECT(DanielssonFilter)
+
+FIND_PACKAGE(ITK)
+IF(ITK_FOUND)
+  INCLUDE(${USE_ITK_FILE})    
+ELSE(ITK_FOUND)
+  MESSAGE(FATAL_ERROR "ITK not found. Please set ITK_DIR")
+ENDIF(ITK_FOUND)
+
+ADD_EXECUTABLE (DanielssonFilter main.cxx)
+TARGET_LINK_LIBRARIES(DanielssonFilter ${ITK_LIBRARIES})
